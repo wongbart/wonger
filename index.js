@@ -56,8 +56,21 @@ app.post('/move', (request, response) => {
   if ((data.you.body[0].x == data.board.width - 1) && 
      (data.you.body[0].y == data.board.height - 1)) { 
   choice = 0;
+     } else if ((data.you.body[0].x == data.board.width - 1) && 
+       (data.you.body[0].y == 0)) { 
+        choice = 2;
+      } else if ((data.you.body[0].x == 0) && 
+       (data.you.body[0].y == 0)) { 
+        choice = 1;
+      } else if ((data.you.body[0].x == 0) && 
+       (data.you.body[0].y == data.board.height - 1)) { 
+        choice = 3;
       } else if (data.you.body[0].y == data.board.height - 1) {
         choice = 3;
+      } else if (data.you.body[0].x == data.board.width - 1) {
+        choice = 0;
+      } else if (data.you.body[0].y == 0) {
+        choice = 2;
       } else /*(data.you.body[0].x == data.board.width - 1)*/ { 
   choice = 1;
       }
