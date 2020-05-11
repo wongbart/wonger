@@ -29,9 +29,9 @@ app.post('/start', (request, response) => {
 
   // Response data
   const data = {
-    color: '#888888',
-    headType: "regular",
-    tailType: "regular"
+    color: '#AA3200',
+    headType: "bwc-snowman",
+    tailType: "round-bum"
   }
 
   return response.json(data)
