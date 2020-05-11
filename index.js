@@ -30,8 +30,8 @@ app.post('/start', (request, response) => {
   // Response data
   const data = {
     color: '#AA3200',
-    headType: "bwc-snowman",
-    tailType: "round-bum"
+    headType: "shac-caffine",
+    tailType: "skinny"
   }
 
   return response.json(data)
