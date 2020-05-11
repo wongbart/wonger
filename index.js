@@ -42,12 +42,19 @@ app.post('/start', (request, response) => {
 // TODO: Use the information in cherrypy.request.json to decide your next move.
 app.post('/move', (request, response) => {
   var data = request.body;
-
+/*
   // Choose a random direction to move in
   possible_moves = ["up", "down", "left", "right"]
   var choice = Math.floor(Math.random() * possible_moves.length);
   var snake_move = possible_moves[choice];
-
+*/
+  possible_moves = ["up", "down", "left", "right"]
+  var choice = 0;
+  if (cherrypy.request.json.you.body[0].y == 0) { 
+  var choice = 3;
+      }
+  var snake_move = possible_moves[choice];
+  
   console.log("MOVE: " + snake_move);
   return response.json({ move: snake_move })
 })
