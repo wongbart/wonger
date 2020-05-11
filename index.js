@@ -51,9 +51,10 @@ app.post('/move', (request, response) => {
   possible_moves = ["up", "down", "left", "right"]
   var choice = 3;
   console.log(data.you.body[0].x);
-  //if (request.body[0].y == request.board.height) { 
-  //choice = 2;
-  //    }
+  console.log(data.board.width - 1);
+  if (data.you.body[0].x == data.board.width - 1) { 
+  choice = 0;
+      }
   var snake_move = possible_moves[choice];
   
   console.log("MOVE: " + snake_move);
