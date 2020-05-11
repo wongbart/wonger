@@ -50,7 +50,7 @@ app.post('/move', (request, response) => {
 */
   possible_moves = ["up", "down", "left", "right"]
   var choice = 3;
-  console.log(data.you.body);
+  console.log(data.you.body[0].x);
   //if (request.body[0].y == request.board.height) { 
   //choice = 2;
   //    }
