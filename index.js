@@ -55,7 +55,9 @@ app.post('/move', (request, response) => {
   console.log(data);
   if ((data.you.body[0].x == data.board.width - 1) && 
      (data.you.body[0].y == data.board.height - 1)) { 
-  choice = 2;
+  choice = 0;
+      } else if (data.you.body[0].y == data.board.height - 1) {
+        choice = 3;
       } else /*(data.you.body[0].x == data.board.width - 1)*/ { 
   choice = 1;
       }
