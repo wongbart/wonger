@@ -49,9 +49,9 @@ app.post('/move', (request, response) => {
   var snake_move = possible_moves[choice];
 */
   possible_moves = ["up", "down", "left", "right"]
-  var choice = 0;
-  if (cherrypy.request.json.you.body[0].y == 0) { 
-  var choice = 3;
+  var choice = 1;
+  if (cherrypy.request.json.you.body[0].y == cherrypy.request.json.board.height) { 
+  choice = 2;
       }
   var snake_move = possible_moves[choice];
   
