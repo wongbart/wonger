@@ -83,7 +83,7 @@ function safe(x, y) {
     }
     console.log(safest)
     if (x == data.board.width || x < 0 || y == data.board.height || y < 0) {
-        return 0;
+        return 1;
     }
 /*
     var count2 = data.you.body.length
