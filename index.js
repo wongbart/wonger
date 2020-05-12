@@ -65,6 +65,7 @@ function safe(x, y) {
       ++safest
       }
       --count
+      console.log(count)
     }
 
     if (x == data.board.width || x < 0 || y == data.board.height || y < 0) {
@@ -89,13 +90,13 @@ function safe(x, y) {
   function pick(num) {
     var safety = 1;
     if (num == 0) {
-        safety = safe(data.you.body[0].x - 1, data.you.body[0].y)
-    } else if (num == 1) {
-        safety = safe(data.you.body[0].x + 1, data.you.body[0].y)
-    } else if (num == 2) {
         safety = safe(data.you.body[0].x, data.you.body[0].y - 1)
-    } else {
+    } else if (num == 1) {
         safety = safe(data.you.body[0].x, data.you.body[0].y + 1)
+    } else if (num == 2) {
+        safety = safe(data.you.body[0].x - 1, data.you.body[0].y)
+    } else {
+        safety = safe(data.you.body[0].x + 1, data.you.body[0].y)
     }
 
     if (safety == 1) {
