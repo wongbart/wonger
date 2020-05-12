@@ -52,7 +52,7 @@ app.post('/move', (request, response) => {
   possible_moves = ["up", "down", "left", "right"]
   var choice = 0;
   
-  console.log(data.board.snakes)
+  //console.log(data.board.snakes)
   
 function safe(x, y) {
     var safest = 0;
@@ -62,25 +62,28 @@ function safe(x, y) {
     console.log(cord)
     var count = data.board.snakes.length
     console.log(count)
+    var count2 = 0
     while (count > 0) { 
-      if (data.board.snakes[count].body.indexOf(cord) != -1) {
+      if (data.board.snakes[count2].body.indexOf(cord) != -1) {
       ++safest
+      ++count2
       }
       --count
+      ++count2
       console.log(count)
     }
 
     if (x == data.board.width || x < 0 || y == data.board.height || y < 0) {
         return 0;
     }
-
+/*
     var count2 = data.you.body.length
     while (count2 > 0) {
         if (data.you.body[count].indexOf(cord) != -1) {
         ++safest
         }
         --count
-    }
+    } */
 
     if (safest == 0) {
       return 1
