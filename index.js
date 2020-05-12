@@ -57,18 +57,16 @@ app.post('/move', (request, response) => {
   
 function safe(x, y) {
     var safest = 0;
-    //var myX = data.you.body[0].x;
-    //var myY = data.you.body[0].y;
     const cord = [x, y]
     console.log(cord)
     var count = data.board.snakes.length
     //console.log(count)
     var count2 = 0
     while (count > 0) { 
-      console.log(data.board.snakes[count2].body.indexOf(cord))
+      //console.log(data.board.snakes[count2].body.indexOf(cord))
       console.log(data.board.snakes[0].body)
       console.log(data.board.snakes[1].body)
-      var con = data.board.snakes[count2].length
+      var con = data.board.snakes[count2].body.length
       console.log(con)
       var con2 = 0 
       while (con > 0) {
@@ -80,9 +78,9 @@ function safe(x, y) {
       }
       --count
       ++count2
-      console.log(count)
+      //console.log(count)
     }
-
+    console.log(safest)
     if (x == data.board.width || x < 0 || y == data.board.height || y < 0) {
         return 0;
     }
