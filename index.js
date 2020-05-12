@@ -49,7 +49,7 @@ app.post('/move', (request, response) => {
   var snake_move = possible_moves[choice];
 */
   var choice = Math.floor(Math.random() * possible_moves.length);
-  //console.log(choice)
+  console.log(choice)
   possible_moves = ["up", "down", "left", "right"]
   //var choice = 0;
   
