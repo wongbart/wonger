@@ -68,7 +68,7 @@ function safe(x, y) {
       console.log(data.board.snakes[count2].body.indexOf(cord))
       console.log(data.board.snakes[0].body)
       console.log(data.board.snakes[1].body)
-      if (data.board.snakes[count2].body.indexOf(cord) != -1) {
+      if (data.board.snakes[count2].body.x == x && data.board.snakes[count2].body.y == y) {
       ++safest
       break
       }
