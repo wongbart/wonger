@@ -48,10 +48,10 @@ app.post('/move', (request, response) => {
   var choice = Math.floor(Math.random() * possible_moves.length);
   var snake_move = possible_moves[choice];
 */
-  var choice = Math.floor(Math.random() * possible_moves.length);
-  console.log(choice)
+  //var choice = Math.floor(Math.random() * possible_moves.length);
+  //console.log(choice)
   possible_moves = ["up", "down", "left", "right"]
-  //var choice = 0;
+  var choice = 0;
   
   //console.log(data.board.snakes)
   
@@ -113,7 +113,7 @@ function safe(x, y) {
         return 0
     }
 }
-  /*
+  
 if (pick(choice) != 1) {
     if (pick(1) != 1) {
       if (pick(2) != 1) {
@@ -124,11 +124,11 @@ if (pick(choice) != 1) {
  } else {
       choice = 1;
   }
-} */
+} /*
   while (pick(choice) != 1) {
     choice = Math.floor(Math.random() * possible_moves.length);
     console.log(choice)
-  }
+  }*/
   var snake_move = possible_moves[choice];
   
   console.log("MOVE: " + snake_move);
