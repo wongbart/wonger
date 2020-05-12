@@ -72,11 +72,11 @@ function safe(x, y) {
       //console.log(con)
       con2 = 0 
       while (con > 0) {
-        console.log(data.board.snakes[con2].body.x)
-        console.log(cord.x)
-        console.log(data.board.snakes[con2].body.y)
-        console.log(cord.y)
-              if (data.board.snakes[con2].body.x == cord.x && data.board.snakes[con2].body.y == cord.y) {
+        console.log(data.board.snakes[count2].body[con2].x)
+        console.log(x)
+        console.log(data.board.snakes[count2].body[con2].y)
+        console.log(y)
+              if (data.board.snakes[count2].body[con2].x == x && data.board.snakes[count2].body[con2].y == y) {
               ++safest
                 console.log(safest)
               break
