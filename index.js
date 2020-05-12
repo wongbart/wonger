@@ -66,8 +66,8 @@ function safe(x, y) {
     var count2 = 0
     while (count > 0) { 
       console.log(data.board.snakes[count2].body.indexOf(cord))
-      console.log(data.board.snake[0].body)
-      console.log(data.board.snake[0].body)
+      console.log(data.board.snakes[0].body)
+      console.log(data.board.snakes[1].body)
       if (data.board.snakes[count2].body.indexOf(cord) != -1) {
       ++safest
       break
