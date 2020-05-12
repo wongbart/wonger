@@ -52,6 +52,8 @@ app.post('/move', (request, response) => {
   possible_moves = ["up", "down", "left", "right"]
   var choice = 0;
   
+  console.log(data.board.snakes)
+  
 function safe(x, y) {
     var safest = 0;
     //var myX = data.you.body[0].x;
