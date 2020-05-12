@@ -53,7 +53,7 @@ app.post('/move', (request, response) => {
   var choice = 0;
   
 function safe(x, y) {
-    var safe = 0;
+    var safest = 0;
     //var myX = data.you.body[0].x;
     //var myY = data.you.body[0].y;
     const cord = [x, y]
@@ -62,7 +62,7 @@ function safe(x, y) {
     console.log(count)
     while (count > 0) { 
       if (data.board.snakes[count].body.indexOf(cord) != -1) {
-      ++safe
+      ++safest
       }
       --count
     }
@@ -74,12 +74,12 @@ function safe(x, y) {
     var count2 = data.you.body.length
     while (count2 > 0) {
         if (data.you.body[count].indexOf(cord) != -1) {
-        ++safe
+        ++safest
         }
         --count
     }
 
-    if (safe == 0) {
+    if (safest == 0) {
       return 1
     } else {
       return 0
@@ -89,13 +89,13 @@ function safe(x, y) {
   function pick(num) {
     var safety = 1;
     if (num == 0) {
-        safety = safe(data.you.body[0].x - 1, data.you.body.y)
+        safety = safe(data.you.body[0].x - 1, data.you.body[0].y)
     } else if (num == 1) {
-        safety = safe(data.you.body[0].x + 1, data.you.body.y)
+        safety = safe(data.you.body[0].x + 1, data.you.body[0].y)
     } else if (num == 2) {
-        safety = safe(data.you.body[0].x, data.you.body.y - 1)
+        safety = safe(data.you.body[0].x, data.you.body[0].y - 1)
     } else {
-        safety = safe(data.you.body[0].x, data.you.body.y + 1)
+        safety = safe(data.you.body[0].x, data.you.body[0].y + 1)
     }
 
     if (safety == 1) {
