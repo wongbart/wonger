@@ -67,7 +67,7 @@ function safe(x, y) {
       //console.log(data.board.snakes[0].body)
       //console.log(data.board.snakes[1].body)
       var con = data.board.snakes[count2].body.length
-      console.log(con)
+      //console.log(con)
       var con2 = 0 
       while (con > 0) {
               if (data.board.snakes[con2].body.x == x && data.board.snakes[con2].body.y == y) {
