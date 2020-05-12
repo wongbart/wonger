@@ -48,32 +48,74 @@ app.post('/move', (request, response) => {
   var choice = Math.floor(Math.random() * possible_moves.length);
   var snake_move = possible_moves[choice];
 */
+  //var choice = Math.floor(Math.random() * possible_moves.length);
   possible_moves = ["up", "down", "left", "right"]
-  var choice = 3;
-  //console.log(data.you.body[0].x);
-  //console.log(data.board.width - 1);
-  console.log(data);
-  if ((data.you.body[0].x == data.board.width - 1) && 
-     (data.you.body[0].y == data.board.height - 1)) { 
-  choice = 0;
-     } else if ((data.you.body[0].x == data.board.width - 1) && 
-       (data.you.body[0].y == 0)) { 
-        choice = 2;
-      } else if ((data.you.body[0].x == 0) && 
-       (data.you.body[0].y == 0)) { 
-        choice = 1;
-      } else if ((data.you.body[0].x == 0) && 
-       (data.you.body[0].y == data.board.height - 1)) { 
-        choice = 3;
-      } else if (data.you.body[0].y == data.board.height - 1) {
-        choice = 3;
-      } else if (data.you.body[0].x == data.board.width - 1) {
-        choice = 0;
-      } else if (data.you.body[0].y == 0) {
-        choice = 2;
-      } else /*(data.you.body[0].x == data.board.width - 1)*/ { 
-  choice = 1;
+  var choice = 0;
+  
+function safe(x, y) {
+    var safe = 0;
+    //var myX = data.you.body[0].x;
+    //var myY = data.you.body[0].y;
+    const cord = [x, y]
+    console.log(cord)
+    var count = data.board.snakes.length
+    console.log(count)
+    while (count > 0) { 
+      if (data.board.snakes[count].body.indexOf(cord) != -1) {
+      ++safe
       }
+      --count
+    }
+
+    if (x == data.board.width || x < 0 || y == data.board.height || y < 0) {
+        return 0;
+    }
+
+    var count2 = data.you.body.length
+    while (count2 > 0) {
+        if (data.you.body[count].indexOf(cord) != -1) {
+        ++safe
+        }
+        --count
+    }
+
+    if (safe == 0) {
+      return 1
+    } else {
+      return 0
+    }
+}
+  
+  function pick(num) {
+    var safety = 1;
+    if (num == 0) {
+        safety = safe(data.you.body[0].x - 1, data.you.body.y)
+    } else if (num == 1) {
+        safety = safe(data.you.body[0].x + 1, data.you.body.y)
+    } else if (num == 2) {
+        safety = safe(data.you.body[0].x, data.you.body.y - 1)
+    } else {
+        safety = safe(data.you.body[0].x, data.you.body.y + 1)
+    }
+
+    if (safety == 1) {
+        return 1
+    } else {
+        return 0
+    }
+}
+  
+if (pick(choice) != 1) {
+    if (pick(choice + 1) != 1) {
+      if (pick(choice + 2) != 1) {
+        choice = 3 
+      } else {
+        choice = 2;
+    }
+ } else {
+      ++choice;
+  }
+}
   var snake_move = possible_moves[choice];
   
   console.log("MOVE: " + snake_move);
