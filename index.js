@@ -75,6 +75,7 @@ function safe(x, y) {
               break
           }
         --con
+        ++con2
       }
       --count
       ++count2
