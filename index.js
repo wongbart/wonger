@@ -64,8 +64,8 @@ function safe(x, y) {
     var count2 = 0
     while (count > 0) { 
       //console.log(data.board.snakes[count2].body.indexOf(cord))
-      console.log(data.board.snakes[0].body)
-      console.log(data.board.snakes[1].body)
+      //console.log(data.board.snakes[0].body)
+      //console.log(data.board.snakes[1].body)
       var con = data.board.snakes[count2].body.length
       console.log(con)
       var con2 = 0 
