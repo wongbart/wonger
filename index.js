@@ -64,9 +64,11 @@ function safe(x, y) {
     console.log(count)
     var count2 = 0
     while (count > 0) { 
+      console.log(data.board.snakes[count2].body.indexOf(cord))
       if (data.board.snakes[count2].body.indexOf(cord) != -1) {
       ++safest
       ++count2
+      return 0
       }
       --count
       ++count2
@@ -112,14 +114,14 @@ function safe(x, y) {
 }
   
 if (pick(choice) != 1) {
-    if (pick(choice + 1) != 1) {
-      if (pick(choice + 2) != 1) {
+    if (pick(1) != 1) {
+      if (pick(2) != 1) {
         choice = 3 
       } else {
         choice = 2;
     }
  } else {
-      ++choice;
+      choice = 1;
   }
 }
   var snake_move = possible_moves[choice];
