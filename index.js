@@ -92,7 +92,7 @@ function safe(x, y) {
     if (x == data.board.width || x < 0 || y == data.board.height || y < 0) {
         return 0;
     }
-/*
+/*  
     var count2 = data.you.body.length
     while (count2 > 0) {
         if (data.you.body[count].indexOf(cord) != -1) {
@@ -100,6 +100,26 @@ function safe(x, y) {
         }
         --count
     } */
+  
+var snakeNum = data.board.snakes.length - 1
+var snakeCur = 1;
+var pos = 4;
+while (snakeNum > 0) {
+    if (data.board.snakes[snakeCur].body[0].x == x - 1 && data.board.snakes[snakeCur].body[0].y == y) {
+        ++safest
+    }
+    if (data.board.snakes[snakeCur].body[0].x == x && data.board.snakes[snakeCur].body[0].y == y - 1) {
+        ++safest
+    }
+    if (data.board.snakes[snakeCur].body[0].x == x && data.board.snakes[snakeCur].body[0].y == y + 1) {
+        ++safest
+    }
+    if (data.board.snakes[snakeCur].body[0].x == x + 1 && data.board.snakes[snakeCur].body[0].y == y) {
+        ++safest
+    }
+    ++snakeCur
+    --snakeNum
+}
 
     if (safest == 0) {
       return 1
@@ -139,6 +159,7 @@ if (pick(choice) != 1) {
   }
 } */
   var final = 50
+  var final2 = 50
   while (pick(choice) != 1 && final != 0) {
     choice = Math.floor(Math.random() * possible_moves.length);
     //console.log(choice)
