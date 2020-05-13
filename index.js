@@ -58,7 +58,7 @@ app.post('/move', (request, response) => {
 function safe(x, y) {
     var safest = 0;
     const cord = [x, y]
-    console.log(cord)
+    //console.log(cord)
     var count = data.board.snakes.length
     //console.log(count)
     var count2 = 0
@@ -72,13 +72,13 @@ function safe(x, y) {
       //console.log(con)
       con2 = 0 
       while (con > 0) {
-        console.log(data.board.snakes[count2].body[con2].x)
-        console.log(x)
-        console.log(data.board.snakes[count2].body[con2].y)
-        console.log(y)
+        //console.log(data.board.snakes[count2].body[con2].x)
+        //console.log(x)
+        //console.log(data.board.snakes[count2].body[con2].y)
+        //console.log(y)
               if (data.board.snakes[count2].body[con2].x == x && data.board.snakes[count2].body[con2].y == y) {
               ++safest
-                console.log(safest)
+                //console.log(safest)
               break
           }
         --con
@@ -88,7 +88,7 @@ function safe(x, y) {
       ++count2
       //console.log(count)
     }
-    console.log(safest)
+    //console.log(safest)
     if (x == data.board.width || x < 0 || y == data.board.height || y < 0) {
         return 0;
     }
@@ -140,7 +140,7 @@ if (pick(choice) != 1) {
 } */
   while (pick(choice) != 1) {
     choice = Math.floor(Math.random() * possible_moves.length);
-    console.log(choice)
+    //console.log(choice)
   }
   var snake_move = possible_moves[choice];
   
