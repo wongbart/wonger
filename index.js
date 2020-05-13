@@ -50,7 +50,7 @@ app.post('/move', (request, response) => {
 */
   possible_moves = ["up", "down", "left", "right"]
   var choice = Math.floor(Math.random() * possible_moves.length);
-  console.log(choice)
+  //console.log(choice)
   //var choice = 0;
   
 function safe(x, y) {
@@ -79,7 +79,7 @@ function safe(x, y) {
     }
   /k
 var snakeNum = data.board.snakes.length - 1
-console.log(snakeNum)
+//console.log(snakeNum)
 var snakeCur = 1;
 var pos = 4;
 while (snakeNum > 0) {
@@ -136,7 +136,7 @@ if (pick(choice) != 1) {
       choice = 1;
   }
 } */
-  var final = 100
+  var final = 50
   //var final2 = 50
   while (pick(choice) != 1 && final != 0) {
     choice = Math.floor(Math.random() * possible_moves.length);
