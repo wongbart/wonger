@@ -53,32 +53,19 @@ app.post('/move', (request, response) => {
   console.log(choice)
   //var choice = 0;
   
-  //console.log(data.board.snakes)
-  //hb
 function safe(x, y) {
     var safest = 0;
     const cord = [x, y]
-    //console.log(cord)
     var count = data.board.snakes.length
-    //console.log(count)
     var count2 = 0
     var con = 0
     var con2 = 0
     while (count > 0) { 
-      //console.log(data.board.snakes[count2].body.indexOf(cord))
-      //console.log(data.board.snakes[0].body)
-      //console.log(data.board.snakes[1].body)
       con = data.board.snakes[count2].body.length
-      //console.log(con)
       con2 = 0 
       while (con > 0) {
-        //console.log(data.board.snakes[count2].body[con2].x)
-        //console.log(x)
-        //console.log(data.board.snakes[count2].body[con2].y)
-        //console.log(y)
               if (data.board.snakes[count2].body[con2].x == x && data.board.snakes[count2].body[con2].y == y) {
               ++safest
-                //console.log(safest)
               break
           }
         --con
@@ -86,22 +73,13 @@ function safe(x, y) {
       }
       --count
       ++count2
-      //console.log(count)
     }
-    //console.log(safest)
     if (x == data.board.width || x < 0 || y == data.board.height || y < 0) {
         return 0;
     }
-/*  
-    var count2 = data.you.body.length
-    while (count2 > 0) {
-        if (data.you.body[count].indexOf(cord) != -1) {
-        ++safest
-        }
-        --count
-    } */
   
 var snakeNum = data.board.snakes.length - 1
+console.log(snakeNum)
 var snakeCur = 1;
 var pos = 4;
 while (snakeNum > 0) {
@@ -158,8 +136,8 @@ if (pick(choice) != 1) {
       choice = 1;
   }
 } */
-  var final = 50
-  var final2 = 50
+  var final = 100
+  //var final2 = 50
   while (pick(choice) != 1 && final != 0) {
     choice = Math.floor(Math.random() * possible_moves.length);
     //console.log(choice)
