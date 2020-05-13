@@ -138,9 +138,11 @@ if (pick(choice) != 1) {
       choice = 1;
   }
 } */
-  while (pick(choice) != 1) {
+  var final = 50
+  while (pick(choice) != 1 && final != 0) {
     choice = Math.floor(Math.random() * possible_moves.length);
     //console.log(choice)
+    --final
   }
   var snake_move = possible_moves[choice];
   
