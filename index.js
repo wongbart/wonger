@@ -54,7 +54,7 @@ app.post('/move', (request, response) => {
   //var choice = 0;
   
   //console.log(data.board.snakes)
-  
+  //hb
 function safe(x, y) {
     var safest = 0;
     const cord = [x, y]
