@@ -35,7 +35,8 @@ app.post('/start', (request, response) => {
   }
 
   return response.json(data)
-})
+}) 
+//rachel
 
 // This function is called on every turn of a game. It's how your snake decides where to move.
 // Valid moves are "up", "down", "left", or "right".
