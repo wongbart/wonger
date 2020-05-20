@@ -78,11 +78,11 @@ function safe(x, y) {
     if (x == data.board.width || x < 0 || y == data.board.height || y < 0) {
         return 0;
     }
-  /k
+  /*
 var snakeNum = data.board.snakes.length - 1
 //console.log(snakeNum)
 var snakeCur = 1;
-var pos = 4;/*
+var pos = 4;
 while (snakeNum > 0) {
     if (data.board.snakes[snakeCur].body[0].x == x - 1 && data.board.snakes[snakeCur].body[0].y == y) {
         ++safest
