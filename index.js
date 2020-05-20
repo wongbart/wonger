@@ -78,7 +78,7 @@ function safe(x, y) {
     if (x == data.board.width || x < 0 || y == data.board.height || y < 0) {
         return 0;
     }
-  /*
+  
 var snakeNum = data.board.snakes.length - 1
 //console.log(snakeNum)
 var snakeCur = 1;
@@ -98,7 +98,7 @@ while (snakeNum > 0) {
     }
     ++snakeCur
     --snakeNum
-}*/
+}
 
     if (safest == 0) {
       return 1
