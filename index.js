@@ -86,19 +86,19 @@ while (snakeNum > 0) {
   console.log(data.board.snakes[snakeCur].length >= data.you.length)
   if (data.board.snakes[snakeCur].id != data.you.id) {
     if (data.board.snakes[snakeCur].body[0].x == x - 1 && data.board.snakes[snakeCur].body[0].y == y && 
-        data.board.snakes[snakeCur].length >= data.you.length) {
+        data.board.snakes[snakeCur].length > data.you.length) {
         ++safest
     }
     if (data.board.snakes[snakeCur].body[0].x == x && data.board.snakes[snakeCur].body[0].y == y - 1 && 
-        data.board.snakes[snakeCur].length >= data.you.length) {
+        data.board.snakes[snakeCur].length > data.you.length) {
         ++safest
     }
     if (data.board.snakes[snakeCur].body[0].x == x && data.board.snakes[snakeCur].body[0].y == y + 1 && 
-        data.board.snakes[snakeCur].length >= data.you.length) {
+        data.board.snakes[snakeCur].length > data.you.length) {
         ++safest
     }
     if (data.board.snakes[snakeCur].body[0].x == x + 1 && data.board.snakes[snakeCur].body[0].y == y && 
-        data.board.snakes[snakeCur].length >= data.you.length) {
+        data.board.snakes[snakeCur].length > data.you.length) {
         ++safest
     }
   }
