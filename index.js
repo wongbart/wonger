@@ -97,9 +97,9 @@ while (snakeNum > 0) {
     if (data.board.snakes[snakeCur].body[0].x == x + 1 && data.board.snakes[snakeCur].body[0].y == y) {
         ++safest
     }
+  }
     ++snakeCur
     --snakeNum
-  }
 }
 
     if (safest == 0) {
