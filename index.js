@@ -80,11 +80,11 @@ function safe(x, y) {
   
 var snakeNum = data.board.snakes.length - 1
 console.log(data.board.snakes)
-var snakeCur = 1;
+var snakeCur = 0;
 var pos = 4;
 while (snakeNum > 0) {
   console.log(data.board.snakes[snakeCur].id == data.you.id)
-  
+  if (data.board.snakes[snakeCur].id != data.you.id) {
     if (data.board.snakes[snakeCur].body[0].x == x - 1 && data.board.snakes[snakeCur].body[0].y == y) {
         ++safest
     }
@@ -99,6 +99,7 @@ while (snakeNum > 0) {
     }
     ++snakeCur
     --snakeNum
+  }
 }
 
     if (safest == 0) {
