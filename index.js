@@ -36,7 +36,6 @@ app.post('/start', (request, response) => {
 
   return response.json(data)
 }) 
-//rachel
 
 // This function is called on every turn of a game. It's how your snake decides where to move.
 // Valid moves are "up", "down", "left", or "right".
@@ -80,7 +79,7 @@ function safe(x, y) {
     }
   
 var snakeNum = data.board.snakes.length - 1
-//console.log(snakeNum)
+console.log(data.board.snakes)
 var snakeCur = 1;
 var pos = 4;
 while (snakeNum > 0) {
